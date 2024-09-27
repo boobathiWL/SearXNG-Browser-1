@@ -1351,7 +1351,7 @@ def run():
     app.run(
         debug=searx_debug,
         use_debugger=searx_debug,
-        port=settings['server']['port'],
+        port=int(os.environ.get("PORT", 5001)),   
         host=settings['server']['bind_address'],
         threaded=True,
         extra_files=[DEFAULT_SETTINGS_FILE],
