@@ -1349,10 +1349,10 @@ if not werkzeug_reloader or (werkzeug_reloader and os.environ.get("WERKZEUG_RUN_
 def run():
     logger.debug('starting webserver on %s:%s', settings['server']['bind_address'], settings['server']['port'])
     app.run(
-        debug=searx_debug,
+        debug=True,
         use_debugger=searx_debug,
-        port=int(os.environ.get("PORT", 5001)),   
-        host=settings['server']['bind_address'],
+        port=int(os.environ.get("PORT", 10001)),   
+        host="0.0.0.0",
         threaded=True,
         extra_files=[DEFAULT_SETTINGS_FILE],
     )
