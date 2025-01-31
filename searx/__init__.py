@@ -10,7 +10,7 @@ import logging
 import searx.unixthreadname
 import searx.settings_loader
 from searx.settings_defaults import settings_set_defaults
-
+ 
 
 # Debug
 LOG_FORMAT_DEBUG = '%(levelname)-7s %(name)-30.30s: %(message)s'
