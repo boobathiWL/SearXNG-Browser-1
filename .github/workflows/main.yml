@@ -1,17 +1,16 @@
 on: push
-name: Publish Website
+name: 🚀 Deploy website on push
 jobs:
   web-deploy:
-    name: 🚀 Deploy Website Every Commit
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get Latest Code
-      uses: actions/checkout@v3
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
     
-    - name: 📂 Sync Files
-      uses: SamKirkland/web-deploy@v1
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        target-server: 167.71.225.80
-        remote-user: root
-        private-ssh-key: ${{ secrets.SSH_KEY }}
-        destination-path: /var/www/searxng/
+        server: 167.71.225.80
+        username: root
+        password: ${{ secrets.ftp_password }}
