@@ -18,7 +18,3 @@ jobs:
         port: 22 # todo replace with your web hosts ftps port
         server-dir: /var/www/searxng/
         timeout: 60000
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
