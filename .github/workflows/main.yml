@@ -11,12 +11,13 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: 167.71.225.80
+        server: searxng.gravitywrite.com
         username: root
         password: ${{ secrets.ftp_password }}
         protocol: ftps
         port: 22 # todo replace with your web hosts ftps port
         server-dir: /var/www/searxng/
+        timeout: 60000
         exclude: |
           **/.git*
           **/.git*/**
