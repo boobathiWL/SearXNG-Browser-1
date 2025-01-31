@@ -12,9 +12,8 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ftpsearxng.gravitywrite.com
-        username: root
-        password: ${{ secrets.ftp_password }}
+        username: searxng
+        password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftp
-        port: 22 # todo replace with your web hosts ftps port
         server-dir: /var/www/searxng/
         timeout: 190000
