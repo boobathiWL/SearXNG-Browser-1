@@ -9,12 +9,12 @@ jobs:
       uses: actions/checkout@v4
 
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@3.1.2
+      uses: SamKirkland/FTP-Deploy-Action@v4.1.0
       with:
         server: ftpsearxng.gravitywrite.com
         username: root
         password: ${{ secrets.ftp_password }}
-        protocol: ftps
+        protocol: sftp
         port: 22 # todo replace with your web hosts ftps port
         server-dir: /var/www/searxng/
         timeout: 190000
