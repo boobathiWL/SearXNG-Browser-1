@@ -7,10 +7,17 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v4
-    
+
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: 167.71.225.80
         username: root
         password: ${{ secrets.ftp_password }}
+        protocol: ftps
+        port: 22 # todo replace with your web hosts ftps port
+        server-dir: /var/www/searxng/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
